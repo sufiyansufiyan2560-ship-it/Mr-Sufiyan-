@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Security Check</title>
+  <style>
+    body{
+      background:#101010;
+      color:#00ff66;
+      font-family:Arial;
+      text-align:center;
+      padding:50px 20px;
+    }
+    button{
+      padding:16px 25px;
+      font-size:18px;
+      border:0;
+      border-radius:12px;
+      background:white;
+    }
+    #text{
+      font-size:22px;
+      margin-top:30px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>📱 Security Check</h1>
+  <p id="text">Ready to check...</p>
+
+  <button onclick="start()">START CHECK</button>
+
+  <script>
+    function start(){
+      let text = document.getElementById("text");
+      let n = 0;
+
+      let check = setInterval(function(){
+        n += 10;
+        text.innerHTML = "Checking... " + n + "%";
+
+        if(n >= 100){
+          clearInterval(check);
+
+          text.innerHTML =
+          "😂 PRANK HO GAYA! 😂<br><br>" +
+          "Bhai tension mat le 😎<br>" +
+          "Tumhara phone bilkul safe hai.";
+        }
+      }, 250);
+    }
+  </script>
+</body>
+</html>
